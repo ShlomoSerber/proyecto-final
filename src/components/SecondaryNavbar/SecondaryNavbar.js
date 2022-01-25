@@ -7,8 +7,9 @@ const SecondaryNavbar = ({categorias}) => {
         <div className="secondary-navbar">
             <nav className="secciones-buttons">
                 {
-                    categorias.length > 0 ??
+                    categorias.length > 0 ?
                     <h2 className="secciones-title">Categorias:</h2>
+                    : <div></div>
                 }
                 {
                     categorias.length > 0 ?

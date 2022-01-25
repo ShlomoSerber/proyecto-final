@@ -3,7 +3,7 @@ export const objetoProductos = [
         id: 1,
         nombre: "Detergente de limon Magistral",
         precio: 150,
-        stock: 2000,
+        stock: 0,
         descripcionChicha: "Detergente de limon Magistral rinde X5",
         descripcionGrande: "Detergente con aroma a limon de marca Magistral, rinde X5. Poder desengrasante desde la primera pasada",
         urlImagen: require("../images/detergente-1.jpg"),

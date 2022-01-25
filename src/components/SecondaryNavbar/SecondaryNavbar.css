@@ -5,6 +5,7 @@
     align-items: center;
     align-content: center;
     padding: 5px;
+    background-color: #1D3557;
 }
 .secciones-buttons {
     display: flex;
@@ -18,6 +19,7 @@
 .secciones-title {
     text-align: left;
     font-size: 25px;
+    color: white;
     margin: 5px;
     padding: 5px;
 }
@@ -26,6 +28,8 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    background-color: #A8DADC;
+    border-color: #A8DADC;
 }
 .search-bar {
     display: flex;
@@ -44,4 +48,6 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    background-color: #A8DADC;
+    border-color: #A8DADC;
 }

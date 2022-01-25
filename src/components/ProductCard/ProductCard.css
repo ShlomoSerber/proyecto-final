@@ -1,0 +1,47 @@
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+.productos-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    width: 90%;
+}
+.producto-card {   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 5px;
+    border-style: solid;
+    border-color: #1D3557;
+    border-width: 2px;
+    border-radius: 10px;
+    width: 250px;
+    background-color: white;
+}
+.producto-card:hover .producto-title{
+    color: #457B9D;
+}
+.producto-imagen {
+    margin: 5px;
+    max-width: 240px;
+    height: 270px;
+    object-fit: contain;
+}
+.producto-text {
+    text-align: start;
+}
+.producto-title {
+    margin: 5px;
+    margin-top: 15px;
+}
+.producto-description {
+    margin: 5px;
+}
+.producto-no-stock {
+    margin: 5px;
+    opacity: 0.5;
+}
