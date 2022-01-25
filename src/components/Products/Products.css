@@ -15,6 +15,12 @@
     margin: 5px;
     padding: 5px;
 }
+.secciones-title {
+    text-align: left;
+    font-size: 25px;
+    margin: 5px;
+    padding: 5px;
+}
 .seccion-button {
     text-align: center;
     margin: 5px;
@@ -39,6 +45,10 @@
     padding: 5px;
     border-radius: 5px;
 }
+.productos-title {
+    text-align: center;
+    margin: 20px;
+}
 .productos-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -48,5 +58,9 @@
 .producto-card {
     margin: 5px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
+}
+.producto-imagen {
+    max-width: 18rem;
+    height: 350px;
 }

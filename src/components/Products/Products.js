@@ -14,6 +14,7 @@ const Products = () => {
         <div>
             <div className="secondary-navbar">
                 <nav className="secciones-buttons">
+                    <h2 className="secciones-title">Categorias:</h2>
                     {
                         secciones.length > 0 ?
                         secciones.map(seccion =>
@@ -29,12 +30,13 @@ const Products = () => {
                     <button className="search-button">Buscar</button>
                 </div>
             </div>
+            <h1 className="productos-title">Productos</h1>
             <div className="productos-cards-container">
                     {
                         productos.length > 0 ?
                         productos.map(producto =>
                             <div className="card producto-card" style={{width: "18rem"}} key={producto.id}>
-                                <img src={producto.urlImagen} className="card-img-top" alt=""/>
+                                <img src={producto.urlImagen} className="card-img-top producto-imagen" alt=""/>
                                 <div className="card-body">
                                     <h5 className="card-title">{producto.nombre}</h5>
                                     <p className="card-text">{producto.descripcionChica}</p>
