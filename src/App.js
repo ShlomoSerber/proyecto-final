@@ -1,8 +1,8 @@
 import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../src/Components/Home'
-import Products from './Components/Products/Products';
-import Navbar from './Components/Navbar/Navbar';
+import Home from './components/Home'
+import Products from './components/Products/Products';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
