@@ -6,7 +6,10 @@ const SecondaryNavbar = ({categorias}) => {
     return ( 
         <div className="secondary-navbar">
             <nav className="secciones-buttons">
-                <h2 className="secciones-title">Categorias:</h2>
+                {
+                    categorias.length > 0 ??
+                    <h2 className="secciones-title">Categorias:</h2>
+                }
                 {
                     categorias.length > 0 ?
                     categorias[0].seccionPrincipal === true

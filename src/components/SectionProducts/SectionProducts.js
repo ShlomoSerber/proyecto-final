@@ -12,8 +12,6 @@ function SectionProducts() {
     const seccionPrincipal = secciones.length > 0 ? secciones.filter(seccion => seccion.seccion === seccionParam) : [];
     const productosSeccion = productos.length > 0 ? productos.filter(producto => producto.seccionPrincipal === seccionParam) : [];
 
-    console.log(seccionPrincipal)
-
     return ( 
         <>
             <SecondaryNavbar categorias={seccionPrincipal[0].subSecciones}/>
