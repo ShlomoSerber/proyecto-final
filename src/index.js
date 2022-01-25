@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import ProductsProvider from '../src/store/productsContext'
 import UsersProvider from '../src/store/usersContext'
+
 ReactDOM.render(
   <UsersProvider>
     <ProductsProvider>

@@ -1,4 +1,6 @@
-export let productos = [
+import detergente2 from "../images/detergente-2.png"
+
+export const objetoProductos = [
     {
         id: 1,
         nombre: "Detergente de limon Magistral",
@@ -6,7 +8,7 @@ export let productos = [
         stock: 2000,
         descripcionChicha: "Detergente de limon Magistral rinde X5",
         descripcionGrande: "Detergente con aroma a limon de marca Magistral, rinde X5. Poder desengrasante desde la primera pasada",
-        urlImagen: "../images/detergente-1.jpg",
+        urlImagen: require("../images/detergente-1.jpg"),
         seccionPrincipal: "Limpieza",
         subSeccion: "Detergentes",
         marca: "Magistral",
@@ -20,7 +22,7 @@ export let productos = [
         stock: 1350,
         descripcionChicha: "Detergente de limon Cif Active Gel",
         descripcionGrande: "Detergente con aroma a limon de marca Cif, Active Gel. Ultra poder desengrasante",
-        urlImagen: "../images/detergente-2.jpg",
+        urlImagen: detergente2,
         seccionPrincipal: "Limpieza",
         subSeccion: "Detergentes",
         marca: "Cif",
@@ -84,20 +86,6 @@ export let productos = [
         destacado: false,
     },
     {
-        id: 6,
-        nombre: "Papel higienico Elite",
-        precio: 100,
-        stock: 1000,
-        descripcionChicha: "Papel higienico Elite doble hoja X4",
-        descripcionGrande: "4 rollos de papel higienico marca Elite ultra doble hoja con maxima suavidad",
-        urlImagen: "../images/papel-higienico-1",
-        seccionPrincipal: "Limpieza",
-        subSeccion: "Papel higienico",
-        marca: "Elite",
-        oferta: false,
-        destacado: true,
-    },
-    {
         id: 7,
         nombre: "Papel higienico Elite premium",
         precio: 120,
@@ -122,8 +110,8 @@ export let productos = [
         seccionPrincipal: "Limpieza",
         subSeccion: "Papel higienico",
         marca: "Elite",
-        oferta: true,
-        destacado: false,
+        oferta: false,
+        destacado: true,
     },
     {
         id: 9,
@@ -150,7 +138,7 @@ export let productos = [
         seccionPrincipal: "Limpieza",
         subSeccion: "Papel higienico",
         marca: "Higienol",
-        oferta: false,
-        destacado: true,
+        oferta: true,
+        destacado: false,
     },
 ]

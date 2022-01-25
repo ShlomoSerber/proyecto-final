@@ -1,16 +1,15 @@
 import { createContext } from "react";
 
 
+export const UsersContext = createContext(null);
 
-export const Context = createContext(null);
-
-const usersContext = ({children}) => {
+const UsersProvider = ({children}) => {
     
     return ( 
-        <Context.Provider value={{}}>
+        <UsersContext.Provider value={{}}>
             {children}
-        </Context.Provider>
+        </UsersContext.Provider>
      );
 }
  
-export default usersContext;
+export default UsersProvider;

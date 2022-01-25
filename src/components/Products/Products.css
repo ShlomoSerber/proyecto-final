@@ -1,0 +1,52 @@
+.secondary-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+}
+.secciones-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    margin: 5px;
+    padding: 5px;
+}
+.seccion-button {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+.search-input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-button {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.productos-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+}
+.producto-card {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
