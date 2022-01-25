@@ -1,8 +1,9 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home'
-import Products from './components/Products/Products';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/Navbar';
+import AllProducts from './components/AllProducts';
+import SectionProducts from './components/SectionProducts';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={ <Home />}/>
-        <Route path='/productos' element={<Products />}/>
+        <Route path='/productos' element={<AllProducts />}/>
+        <Route path='/productos/:seccionParam' element={<SectionProducts />}/>
+        <Route path='/productos/subSeccion/:subSeccionParam' element={<AllProducts />}/>
       </Routes>
     </Router>
   );

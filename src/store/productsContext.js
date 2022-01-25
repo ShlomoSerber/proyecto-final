@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { objetoProductos } from "../assets/data/objetoProductos.js"
-import { seccionesPrincipales } from "../assets/data/seccionesPrincipales.js"
+import { objetoSecciones } from "../assets/data/objetoSecciones.js"
 
 
 export const ProductsContext = createContext(null);
@@ -16,8 +16,8 @@ const ProductsProvider = ({children}) => {
 
     // Este useEffect setea las secciones principales de productos igual a la lista de secciones en seccionesPrincipales.js
     useEffect(() => {
-        setSecciones(seccionesPrincipales);
-    }, [seccionesPrincipales])
+        setSecciones(objetoSecciones);
+    }, [objetoSecciones])
 
     return (
         <ProductsContext.Provider value={{productos, secciones}}>
