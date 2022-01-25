@@ -9,12 +9,10 @@ const ProductsProvider = ({children}) => {
     const [productos, setProductos] = useState([]);
     const [secciones, setSecciones] = useState([]);
 
-    // Este useEffect setea el estado productos igual a la lista de productos en productos.js
     useEffect(() => {
         setProductos(objetoProductos);
     }, [objetoProductos])
 
-    // Este useEffect setea las secciones principales de productos igual a la lista de secciones en seccionesPrincipales.js
     useEffect(() => {
         setSecciones(objetoSecciones);
     }, [objetoSecciones])

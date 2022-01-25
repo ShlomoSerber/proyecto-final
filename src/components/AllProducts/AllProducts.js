@@ -8,11 +8,11 @@ function AllProducts() {
     const { productos, secciones } = useContext(ProductsContext);
 
     return (
-        <div>
+        <>
             <SecondaryNavbar categorias={secciones}/>
             <h1 className="productos-title">Productos</h1>
             <Products productos={productos}/>
-        </div>
+        </>
     );
 }
 
