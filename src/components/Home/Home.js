@@ -20,7 +20,7 @@ const Home = () => {
             <div className='carrouselAndButton'>
                 <Carrousel />
                 <div className='d-flex justify-content-center'>
-                    <Link to='/productos' className='m-3'><button className='carrousel-button'>Empezá a Comprar</button></Link>
+                    <Link to='/productos' className='m-3'><button className='carrousel-button'><h5 className='no-padding-margin'>Empezá a Comprar</h5></button></Link>
                 </div>
             </div>
 

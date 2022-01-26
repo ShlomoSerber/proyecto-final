@@ -1,0 +1,56 @@
+.contenedorFormPrdocutos{
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1D3557;
+    border-radius: 10px;
+    background-color: #F1FAEE;
+    width: 45%;
+    height: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tituloFormProductos{
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+.itemForm{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 5px;
+    padding: 5px;
+}
+.item-label {
+    margin: 5px;
+    padding: 5px;
+}
+.item-input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+.itemInputForm{
+    max-width: 65%;
+    margin: 0 2%;
+}
+.textareaForm{
+    width: 80%;
+    margin: 0 2%;
+}
+.botonFormProductos{
+    background-color: rgb(69, 201, 225);
+    border: none;
+    border-radius: 20px;
+    width: 35%;
+    margin-top: 5%;
+    height: 15%;
+}

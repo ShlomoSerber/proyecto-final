@@ -15,8 +15,8 @@
 }
 .carrousel-button {
     text-align: center;
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
     border-radius: 5px;
     background-color: #A8DADC;
     border-color: #A8DADC;
@@ -27,4 +27,8 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+}
+.no-padding-margin {
+    padding: 0px;
+    margin: 0px;
 }
