@@ -12,6 +12,7 @@ export const objetoProductos = [
         marca: "Magistral",
         oferta: true,
         destacado: false,
+        cantidad: "300ml",
     },
     {
         id: 2,
@@ -26,6 +27,7 @@ export const objetoProductos = [
         marca: "Cif",
         oferta: true,
         destacado: false,
+        cantidad: "300ml",
     },
     {
         id: 3,
@@ -40,6 +42,7 @@ export const objetoProductos = [
         marca: "Magistral",
         oferta: false,
         destacado: true,
+        cantidad: "300ml",
     },
     {
         id: 4,
@@ -54,6 +57,7 @@ export const objetoProductos = [
         marca: "Ype",
         oferta: false,
         destacado: true,
+        cantidad: "350ml",
     },
     {
         id: 5,
@@ -68,6 +72,7 @@ export const objetoProductos = [
         marca: "Ala",
         oferta: true,
         destacado: false,
+        cantidad: "300ml",
     },
     {
         id: 6,
@@ -82,6 +87,7 @@ export const objetoProductos = [
         marca: "Elite",
         oferta: true,
         destacado: false,
+        cantidad: "4 rollos",
     },
     {
         id: 7,
@@ -96,6 +102,7 @@ export const objetoProductos = [
         marca: "Elite",
         oferta: false,
         destacado: true,
+        cantidad: "4 rollos",
     },
     {
         id: 8,
@@ -110,6 +117,7 @@ export const objetoProductos = [
         marca: "Elite",
         oferta: false,
         destacado: true,
+        cantidad: "6 rollos",
     },
     {
         id: 9,
@@ -124,6 +132,7 @@ export const objetoProductos = [
         marca: "Sulleg",
         oferta: true,
         destacado: false,
+        cantidad: "4 rollos",
     },
     {
         id: 10,
@@ -138,5 +147,6 @@ export const objetoProductos = [
         marca: "Higienol",
         oferta: true,
         destacado: false,
+        cantidad: "4 rollos",
     },
 ]

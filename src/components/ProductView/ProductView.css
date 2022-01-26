@@ -1,6 +1,6 @@
 .product-view-background {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     background-color: #F1FAEE;
 }
@@ -25,10 +25,39 @@
     margin: 5px;
     margin-top: 25px;
 }
-.product-title {
+.product-title, .product-text , .product-brand{
     text-align: start;
     margin: 5px;
     padding: 5px;
+}
+.product-text-margin {
+    margin-top: 30px;
+}
+.add-cart-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #1D3557;
+    border-width: 2px;
+    margin: 30px;
+    padding: 10px;
+    width: 20vw;
+    height: 33vw;
+}
+.add-cart-card-title {
+    text-align: center;
+    margin: 5px;
+    margin-top: 30px;
+    padding: 5px;
+}
+.cantidad {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 @media(max-width: 720px) {
