@@ -1,0 +1,13 @@
+.imgCard {
+    border-radius: 5px;
+    box-shadow: black;
+}
+
+.imgCard:hover {
+    height: 200px;
+}
+
+.pNombre{
+    font-weight: 500;
+    font-size: 20px;
+}
