@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ProductCard.css"
 
 function ProductCard({productos}) {
@@ -7,19 +8,21 @@ function ProductCard({productos}) {
                 {
                 productos.length > 0 ?
                 productos.map(producto =>
-                    <div className="producto-card" key={producto.id}>
-                        <img src={producto.urlImagen} className="producto-imagen" alt=""/>
-                        <div className="producto-text">
-                            <h5 className="producto-title">{producto.nombre}</h5>
-                            <p className="producto-description">{producto.descripcionChica}</p>
-                            <p className="producto-description">{`Precio: $${producto.precio}`}</p>
-                            {
-                                producto.stock === 0 ? 
-                                <p className="producto-no-stock">No hay Stock</p>
-                                : <div></div>
-                            }
+                    <Link className="no-style" to={`/productos/producto/${producto.id}`} key={producto.id}>
+                        <div className="producto-card">
+                            <img src={producto.urlImagen} className="producto-imagen" alt=""/>
+                            <div className="producto-text">
+                                <h5 className="producto-title">{producto.nombre}</h5>
+                                <p className="producto-description">{producto.descripcionChica}</p>
+                                <p className="producto-description">{`Precio: $${producto.precio}`}</p>
+                                {
+                                    producto.stock === 0 ? 
+                                    <p className="producto-no-stock">No hay Stock</p>
+                                    : <div></div>
+                                }
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 )
                 : <div></div>
                 }

@@ -27,11 +27,11 @@ function Products() {
     : []
     : [];
 
-    // Los productos de una subseccion especifica (de nombre igual a subSeccionParam)
-    const subSeccionDetalles = 
+    // Los detalles y objetos de una subseccion especifica (de nombre igual a subSeccionParam)
+    const subSecciones = 
     secciones.length > 0 ?
     subSeccionParam !== undefined ?
-    secciones.filter((seccion, index) => seccion.subSecciones.filter(subSeccion => subSeccion === subSeccionParam))
+    secciones.filter(seccion => seccion.subSecciones.filter(subSeccion => subSeccion === subSeccionParam))
     : []
     : [];
     const subSeccionProductos = 
@@ -41,17 +41,14 @@ function Products() {
     : []
     : [];
 
-    console.log(secciones);
-    console.log(seccionDetalles);
-
     return ( 
         <div className="background-color">
             <SecondaryNavbar categorias={secciones}/>
             <ThirdNavbar subCategorias={
                 seccionParam !== undefined && seccionDetalles.length > 0 ?
                 seccionDetalles[0].subSecciones
-                : subSeccionParam !== undefined || subSeccionDetalles.length > 0 ?
-                subSeccionDetalles[0].subSecciones
+                : subSeccionParam !== undefined && subSecciones.length > 0 ?
+                subSecciones[0].subSecciones
                 : []       
             }/>
             <h1 className="seccion-title">{

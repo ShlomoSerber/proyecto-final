@@ -1,3 +1,10 @@
+.no-style {
+    text-decoration: none;
+    color: black;
+}
+.no-style:hover {
+    color: black;
+}
 .flex-center {
     display: flex;
     justify-content: center;
@@ -20,7 +27,12 @@
     border-width: 2px;
     border-radius: 10px;
     width: 250px;
+    min-height: 430px;
     background-color: white;
+}
+.producto-card:hover {
+    width: 260px;
+    min-height: 440px;
 }
 .producto-card:hover .producto-title{
     color: #457B9D;
