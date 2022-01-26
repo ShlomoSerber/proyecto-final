@@ -13,5 +13,16 @@ export const objetoSecciones = [
                 seccion: "Papel higienico"
             },
         ],
+    },
+    {
+        id: 2,
+        seccion: "Muebles",
+        seccionPrincipal: true,
+        subSecciones: [
+            {
+                id: 1002,
+                seccion: "Mesa",
+            },
+        ],
     }
 ];
