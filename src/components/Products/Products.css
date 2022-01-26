@@ -1,7 +1,8 @@
 .background-color {
     background-color: #F1FAEE;
+    text-align: center;
 }
-.productos-title {
-    color: white;
-    font-size: 20px;
+.seccion-title {
+    margin: 30px;
+    padding: 5px;
 }

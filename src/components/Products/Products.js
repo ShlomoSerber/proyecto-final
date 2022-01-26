@@ -54,7 +54,7 @@ function Products() {
                 subSeccionDetalles[0].subSecciones
                 : []       
             }/>
-            <h1>{
+            <h1 className="seccion-title">{
                 subSeccionParam !== undefined ?
                 subSeccionParam
                 : seccionParam !== undefined ?
