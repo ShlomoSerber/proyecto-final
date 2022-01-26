@@ -28,17 +28,13 @@ function Products() {
     : [];
 
     // Los detalles y objetos de una subseccion especifica (de nombre igual a subSeccionParam)
-    const subSecciones = 
-    secciones.length > 0 ?
-    subSeccionParam !== undefined ?
-    secciones.filter(seccion => seccion.subSecciones.filter(subSeccion => subSeccion === subSeccionParam))
-    : []
-    : [];
     const subSeccionProductos = 
-    productos.length > 0 ? 
-    subSeccionParam !== undefined ?
+    productos.length > 0 && subSeccionParam !== undefined ?
     productos.filter(producto => producto.subSeccion == subSeccionParam)
-    : []
+    : [];
+    const subSecciones = 
+    secciones.length > 0 && subSeccionParam !== undefined ?
+    secciones.filter((seccion, index) => seccion.seccion == subSeccionProductos[index].seccionPrincipal)
     : [];
 
     return ( 
