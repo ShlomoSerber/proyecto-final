@@ -17,7 +17,7 @@ function Products() {
     const seccionDetalles = 
     secciones.length > 0 ? 
     seccionParam !== undefined ?
-    secciones.filter(seccion => seccion.seccion == seccionParam) 
+    secciones.filter(seccion => seccion.seccion == seccionParam)
     : []
     : [];
     const seccionProductos = 
@@ -28,6 +28,12 @@ function Products() {
     : [];
 
     // Los productos de una subseccion especifica (de nombre igual a subSeccionParam)
+    const subSeccionDetalles = 
+    secciones.length > 0 ?
+    subSeccionParam !== undefined ?
+    secciones.filter((seccion, index) => seccion.subSecciones.filter(subSeccion => subSeccion === subSeccionParam))
+    : []
+    : [];
     const subSeccionProductos = 
     productos.length > 0 ? 
     subSeccionParam !== undefined ?
@@ -35,22 +41,20 @@ function Products() {
     : []
     : [];
 
+    console.log(secciones);
     console.log(seccionDetalles);
 
     return ( 
         <div className="background-color">
             <SecondaryNavbar categorias={secciones}/>
-            <ThirdNavbar categorias={
-                seccionParam !== undefined || subSeccionParam !== undefined ?
-                seccionDetalles.length === 1 ?
+            <ThirdNavbar subCategorias={
+                seccionParam !== undefined && seccionDetalles.length > 0 ?
                 seccionDetalles[0].subSecciones
-                : []
-                : []
+                : subSeccionParam !== undefined || subSeccionDetalles.length > 0 ?
+                subSeccionDetalles[0].subSecciones
+                : []       
             }/>
-            {
-                
-            }
-            <h1 className="productos-title">{
+            <h1>{
                 subSeccionParam !== undefined ?
                 subSeccionParam
                 : seccionParam !== undefined ?
