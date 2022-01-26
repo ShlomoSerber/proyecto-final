@@ -20,20 +20,19 @@ const Home = () => {
             <div className='carrouselAndButton'>
                 <Carrousel />
                 <div className='d-flex justify-content-center'>
-                    <Link to='/productos'><button className='btn btn-info mt-3 mb-3'>Empezá a Comprar</button></Link>
+                    <Link to='/productos' className='m-3'><button className='carrousel-button'>Empezá a Comprar</button></Link>
                 </div>
             </div>
 
             <div>
                 <div className='containerCardsTypeProducts containerGlobal'>
                     <h3 className='text-center'>Nuestros Productos</h3>
-                    <div className='d-flex justify-content-evenly '>
+                    <div className='container-product-cards'>
                         {tipoProductos.map(tipo => (
                             <div key={tipo.id} className='mt-5'>
                                 <Card  {...tipo} />
                             </div>
                         ))}
-
                     </div>
                 </div>
             </div>
@@ -41,13 +40,12 @@ const Home = () => {
             <div>
                 <div className='containerCardsOnSaleProducts containerGlobal'>
                     <h3 className='text-center'>Nuestras Ofertas no te las pierdas</h3>
-                    <div className='d-flex justify-content-evenly '>
+                    <div className='container-product-cards'>
                         {tipoProductos.map(tipo => (
                             <div key={tipo.id} className='mt-5'>
                                 <Card  {...tipo} />
                             </div>
                         ))}
-
                     </div>
                 </div>
             </div>
@@ -55,13 +53,12 @@ const Home = () => {
             <div>
                 <div className='containerCardsTypeProducts containerGlobal'>
                     <h3 className='text-center'>Nuestros Productos</h3>
-                    <div className='d-flex justify-content-evenly '>
+                    <div className='container-product-cards'>
                         {tipoProductos.map(tipo => (
                             <div key={tipo.id} className='mt-5'>
                                 <Card  {...tipo} />
                             </div>
                         ))}
-
                     </div>
                 </div>
             </div>

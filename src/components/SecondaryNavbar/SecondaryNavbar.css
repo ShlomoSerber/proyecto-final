@@ -5,7 +5,7 @@
     align-items: center;
     align-content: center;
     padding: 5px;
-    background-color: #457B9D;
+    background-color: #1D3557;
 }
 .secciones-buttons {
     display: flex;
@@ -50,4 +50,27 @@
     border-radius: 5px;
     background-color: #A8DADC;
     border-color: #A8DADC;
+}
+.mobile-sections {
+    display: none;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #A8DADC;
+    border-color: #A8DADC;
+}
+
+@media(max-width: 500px) {
+    .mobile-sections {
+        display: flex;
+    }
+    .desktop-tablet-sections {
+        display: none;
+    }
+}
+@media(max-width: 415px) {
+    .search-input {
+        width: 200px;
+    }
 }

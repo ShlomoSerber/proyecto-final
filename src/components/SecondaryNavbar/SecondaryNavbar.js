@@ -1,7 +1,8 @@
 import "./SecondaryNavbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SecondaryNavbar = ({categorias}) => {
+    const navigate = useNavigate();
 
     return ( 
         <div className="secondary-navbar">
@@ -13,17 +14,24 @@ const SecondaryNavbar = ({categorias}) => {
                 }
                 {
                     categorias.length > 0 ?
-                    categorias[0].seccionPrincipal === true
-                    ? categorias.map(categoria =>
-                        <Link to={`/productos/${categoria.seccion}`} key={categoria.id}>
+                    categorias.map(categoria =>
+                        <Link to={`/productos/${categoria.seccion}`} key={categoria.id} className="desktop-tablet-sections">
                             <button className="seccion-button">{categoria.seccion}</button>
                         </Link>
                     )
-                    : categorias.map(categoria =>
-                        <Link to={`/productos/subSeccion/${categoria.seccion}`} key={categoria.id}>
-                            <button className="seccion-button">{categoria.seccion}</button>
-                        </Link>
-                    )
+                    : <div></div>
+                }
+                {
+                    categorias.length > 0 ?
+                    <select className="mobile-sections" name="Categorias">
+                        {
+                            categorias.map(categoria =>
+                                <option key={categoria.id} value={categoria.seccion} onClick={() => navigate(`/productos/${categoria.seccion}`)}>
+                                    {categoria.seccion}
+                                </option>
+                            )
+                        }
+                    </select>
                     : <div></div>
                 }
             </nav>
