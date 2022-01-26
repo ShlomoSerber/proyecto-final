@@ -12,8 +12,8 @@ const ItemProducto = ({nombre, id, marca, urlImagen, seccionPrincipal, subSeccio
             <td>{seccionPrincipal}</td>
             <td>{subSeccion}</td>
             <td className="contenedorBotonesItemProducto">
-                <button className="btn btn-outline-info mx-1" onClick={() => editar(id)}>Ver/Editar</button>
-                <button className="btn btn-outline-danger mx-1"  onClick={() => eliminar(id)}>Eliminar</button>
+                <button className="editar-button" onClick={() => editar(id)}>Ver/Editar</button>
+                <button className="eliminar-button" onClick={() => eliminar(id)}>Eliminar</button>
             </td>
         </tr>
     );

@@ -6,11 +6,11 @@
     border-color: #1D3557;
     border-radius: 10px;
     background-color: #F1FAEE;
-    width: 45%;
-    height: 45%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 .tituloFormProductos{
@@ -20,11 +20,16 @@
     font-size: 25px;
     text-align: center;
 }
-.itemForm{
+.itemForm {
+    width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     margin: 5px;
     padding: 5px;
+}
+.itemForm-dropdown {
+    width: auto;
 }
 .item-label {
     margin: 5px;
@@ -34,23 +39,33 @@
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    width: 100%;
 }
-
-
-
-.itemInputForm{
-    max-width: 65%;
-    margin: 0 2%;
+.item-input-number {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100px;
 }
-.textareaForm{
-    width: 80%;
-    margin: 0 2%;
+.dropdowns, .number-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
 }
-.botonFormProductos{
-    background-color: rgb(69, 201, 225);
-    border: none;
-    border-radius: 20px;
-    width: 35%;
-    margin-top: 5%;
-    height: 15%;
+.item-dropdown, .guardar-button, .cerrar-button{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #A8DADC;
+    border-color: #A8DADC;
+}
+.guardar-button {
+    margin: 10px;
+}
+.alert {
+    margin: 5px;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
 }
