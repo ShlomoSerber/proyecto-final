@@ -39,7 +39,7 @@ const Carrito = () => {
                 </>
                 :
 
-                <div>Carrito vacio agrega tus productos</div>
+                <div className='carrito-text'>Carrito vacio agrega tus productos</div>
             }
         </div>
     );

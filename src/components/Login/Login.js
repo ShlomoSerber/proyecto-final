@@ -25,16 +25,13 @@ const Login = () => {
         let user = usuarios.find(usuario => usuario.username === values.username)
         if (user !== undefined) {
             if (user.password === values.password) {
-                console.log("ok")
                 setCurrentUser([user])
                 setValues(initialValues)
                 setWarning(false)
             } else {
                 setWarning(true)
-                console.log("esat mal")
             }
         } else {
-            console.log("no existe")
             setWarning(true)
         }
     }
@@ -64,15 +61,17 @@ const Login = () => {
                                 </div>
                                 : ""
                         }
-                        <button className='login-button' >Ingresar</button>
+                        <button className='login-button'>Ingresar</button>
                         <Link className='item-label m-0-auto' to="/registro">No tenes cuenta? Registrate!</Link>
                         
                     </form>
                     :
                     <div>
-                        <h4 className='item-label'>Hola {currentUser[0].username}</h4>
-                        <p className='item-label'>Ya iniciaste sesión</p>
-                        <Link className='item-label m-0-auto' to="/productos">Ir a comprar</Link>
+                        <h3 className='item-label text-center'>Hola {currentUser[0].username}</h3>
+                        <p className='item-label text-center'>Ya iniciaste sesión</p>
+                        <Link className='item-label' to="/productos">
+                            <p className='text-center'>Ir a comprar</p>
+                        </Link>
                     </div>
             }
         </div>

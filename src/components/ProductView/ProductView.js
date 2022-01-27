@@ -31,7 +31,7 @@ const ProductView = () => {
             admin: currentUser[0].admin,
             id: currentUser[0].id
             }
-        ])
+        ])   
     }, [carrito])
 
     const setVarios = (e) => {
@@ -45,8 +45,6 @@ const ProductView = () => {
     secciones.filter(seccion => seccion.seccion == objetoProducto[0].seccionPrincipal)
     : []
     : [];
-
-    console.log(precioTotal);
 
     return (
         <>
