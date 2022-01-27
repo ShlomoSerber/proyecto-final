@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/proyecto-final/static/css/main.b5508273.css",
+    "main.js": "/proyecto-final/static/js/main.9b65114b.js",
+    "static/js/787.dcc73137.chunk.js": "/proyecto-final/static/js/787.dcc73137.chunk.js",
+    "static/media/imagenSuper_2.jpg": "/proyecto-final/static/media/imagenSuper_2.5022005c3a41e8da4cee.jpg",
+    "static/media/detergente-4.jpeg": "/proyecto-final/static/media/detergente-4.8ed2486f55491b802a97.jpeg",
+    "static/media/imagenSuper_1.jpg": "/proyecto-final/static/media/imagenSuper_1.0a7102e8300851678e05.jpg",
+    "static/media/yogur-1.png": "/proyecto-final/static/media/yogur-1.38955a061dc3e6403fa9.png",
+    "static/media/imagenSuper_3.jpg": "/proyecto-final/static/media/imagenSuper_3.c29f4c0aabdd4876faed.jpg",
+    "static/media/logoSuperSinFondo.png": "/proyecto-final/static/media/logoSuperSinFondo.e118c6c2ef21ba7c36a6.png",
+    "static/media/papel-higienico-1.jpg": "/proyecto-final/static/media/papel-higienico-1.751636f0b9e3f0b0f5cd.jpg",
+    "static/media/bootstrap-icons.woff?": "/proyecto-final/static/media/bootstrap-icons.38c4d2499557ae0379fd.woff",
+    "static/media/bootstrap-icons.woff2?": "/proyecto-final/static/media/bootstrap-icons.2b56e79ae5013246de29.woff2",
+    "static/media/detergente-2.png": "/proyecto-final/static/media/detergente-2.334cffad63b389f7c37a.png",
+    "static/media/mesa-2.jpg": "/proyecto-final/static/media/mesa-2.e97b5be51c024d67c193.jpg",
+    "static/media/papel-higienico-2.jpg": "/proyecto-final/static/media/papel-higienico-2.a093ddc4d1058fcc396b.jpg",
+    "static/media/detergente-1.jpg": "/proyecto-final/static/media/detergente-1.fb3b4befd72f28b2bed9.jpg",
+    "static/media/cama-1.jpg": "/proyecto-final/static/media/cama-1.ce6063fa34c048fb6af9.jpg",
+    "static/media/Alimentos.jpg": "/proyecto-final/static/media/Alimentos.9a18599dcae3fa81fb2a.jpg",
+    "static/media/mesa-1.jpg": "/proyecto-final/static/media/mesa-1.f09c8f2a6aa202f8bb2a.jpg",
+    "static/media/Limpieza.jpg": "/proyecto-final/static/media/Limpieza.100c8c0cb05d1da2543f.jpg",
+    "static/media/Hogar.jpg": "/proyecto-final/static/media/Hogar.158495c8a406303e8854.jpg",
+    "index.html": "/proyecto-final/index.html",
+    "main.b5508273.css.map": "/proyecto-final/static/css/main.b5508273.css.map",
+    "main.9b65114b.js.map": "/proyecto-final/static/js/main.9b65114b.js.map",
+    "787.dcc73137.chunk.js.map": "/proyecto-final/static/js/787.dcc73137.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5508273.css",
+    "static/js/main.9b65114b.js"
+  ]
+}
