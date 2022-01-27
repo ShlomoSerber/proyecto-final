@@ -5,23 +5,33 @@ import { objetoSecciones } from "../assets/data/objetoSecciones.js"
 
 export const ProductsContext = createContext(null);
 
+
+
 const ProductsProvider = ({children}) => {
-    const [productos, setProductos] = useState([]);
-    const [secciones, setSecciones] = useState([]);
+    const [secciones, setSecciones] = useState();
+
+
+    const [productos, setProductos] = useState(
+        JSON.parse(localStorage.getItem("productos")) === null ? objetoProductos : JSON.parse(localStorage.getItem("productos"))
+    );
 
     useEffect(() => {
-        setProductos(objetoProductos);
-    }, [objetoProductos])
+        if(JSON.parse(localStorage.getItem("productos")) === null){
+            localStorage.setItem("productos", JSON.stringify(productos))
+        }
+    }, [productos])
 
     useEffect(() => {
         setSecciones(objetoSecciones);
     }, [objetoSecciones])
 
+     
     return (
-        <ProductsContext.Provider value={{productos, secciones}}>
+        <ProductsContext.Provider value={{setProductos, productos, secciones}}>
             {children}
         </ProductsContext.Provider>
-     );
+    );
+
 }
- 
+
 export default ProductsProvider;

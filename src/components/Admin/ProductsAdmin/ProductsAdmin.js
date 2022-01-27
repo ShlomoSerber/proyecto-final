@@ -1,5 +1,4 @@
 import './ProductsAdmin.css'
-import TextField from '@mui/material/TextField';
 import { useContext, useEffect, useState } from 'react';
 import FormProductos from './FormProductos/FormProductos';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,22 +27,21 @@ const ProductsAdmin = () => {
     const [verForm, setVerForm] = useState(false)
     const { productos, setProductos } = useContext(ProductsContext)
 
-   /*  useEffect(() => {
-        console.log(productos)
-    }, [productos]) */
-
     const editar = (id) => {
-        console.log("editando")
-        setValues(productos.find(producto => producto.id === id))
-        setEditando(true)
+        setValues(productos.find(producto => producto.id === id));
+        setEditando(true);
+        setVerForm(true);
     }
 
     const eliminar = (id) => {
         if(window.confirm("Estas seguro de eliminar este producto?")){
             setProductos(productos.filter(producto => producto.id !== id))
         }
-
     }
+
+    useEffect(() => {
+        localStorage.setItem("productos", JSON.stringify(productos))
+    }, [productos])
 
     return (
         <div className="contenedorABMProductos" >

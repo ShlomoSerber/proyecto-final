@@ -1,35 +1,27 @@
-import './FormProductos.css'
 import { useContext, useEffect, useState } from 'react';
+import './FormProductos.css'
 import { ProductsContext } from '../../../../store/productsContext';
-import { toast } from 'react-toastify'
-import { v4 as uuidv4 } from 'uuid';
 import Alert from '@mui/material/Alert';
+import Switch from '@mui/material/Switch';
 
 const FormProductos = ({initialValues, values, setValues, editando, setEditando, setVerForm}) => {
     
-    const {setProductos, productos} = useContext(ProductsContext) 
+    const {setProductos, productos, secciones} = useContext(ProductsContext)
 
-    useEffect(() => {
-
-    },[])
-
-    /* const initialValues = {
-        id: uuidv4(),
-        nombre: "",
-        marca: "",
-        descripcion: "",
-        precio: 1,
-        stock: 1,
-        seccion: "",
-        subseccion: ""
-    } */
 
     const [mostrarWarning, setMostrarWarning] = useState(false)
     const [mostrarExito, setMostrarExito] = useState(false)
+    const [oferta, setOferta] = useState(false)
+    const [destacado, setDestacado] = useState(false)
+    
 
-    const handleInputChange = (e) => {
-        const {name, value} = e.target
+    const handleInputChange = (name, value) => {
         setValues({...values, [name]: name==="precio" || name==="stock" ? parseInt(value): value})
+    }
+
+    const handleInputChangeSeccion = (e) => {
+        const {value} = e.target
+        setValues({...values, seccionPrincipal: value, subSeccion: ""})
     }
 
     const confirmarEdicion = (e) => {
@@ -44,6 +36,21 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
         setEditando(false)
     }
 
+
+    const hacerOferta = () => {
+        setOferta(!oferta)
+    }
+    useEffect(() => {
+        handleInputChange("oferta", oferta)
+    },[oferta])
+
+    const hacerDestacado = () => {
+        setDestacado(!destacado)
+    }
+    useEffect(() => {
+        handleInputChange("destacado", destacado)
+    },[destacado])
+
     const guardarProducto = (e) => {
         e.preventDefault()
         if(estaCompleto()){
@@ -51,10 +58,7 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
             setValues(initialValues)
             setMostrarWarning(false)
             setMostrarExito(true)
-            console.log(values)
-           /*  objetoProductos.appendFile(values) */
         }else{
-            console.log("completa")
             setMostrarWarning(true)
         }
     }
@@ -63,12 +67,12 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
         if(mostrarExito){
             setTimeout(() => {
                 setMostrarExito(false)
-            }, 4000);   
+            }, 4000);
         }
     },[mostrarExito])
 
 
-    useEffect(() =>{ 
+    useEffect(() =>{
         localStorage.setItem("productos", JSON.stringify(productos))
     },[productos])
 
@@ -82,9 +86,9 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
         return true
     }
 
-    /* useEffect(() => {
+    useEffect(() => {
         console.log(values)
-    },[values]) */
+    },[values])
 
     return ( 
         <>
@@ -92,55 +96,67 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
                 <h2 className="tituloFormProductos">Datos del producto</h2>
                 <div className="itemForm">
                     <label className="item-label" htmlFor="nombre">Nombre</label>
-                    <input onChange={(e) => handleInputChange(e)} value={values.nombre} className="item-input" type="text" name="nombre" id="nombre" />
+                    <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} value={values.nombre} className="item-input" type="text" name="nombre" id="nombre" />
                 </div>
                 <div className="itemForm">
-                    <label className="item-label" htmlFor="urlImagen">Nombre para la imagen</label>
-                    <input onChange={(e) => handleInputChange(e)} value={values.urlImagen} className="item-input" type="text" name="urlImagen" id="urlImagen" />
+                    <label className="item-label" htmlFor="urlImagen">Nombre de la imagen</label>
+                    <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} value={values.urlImagen} className="item-input" type="text" name="urlImagen" id="urlImagen" />
                 </div>
                 <div className="itemForm">
                     <label className="item-label" htmlFor="descripcionChicha">Descrpicion chica</label>
-                    <textarea value={values.descripcionChicha} onChange={(e) => handleInputChange(e)} className="item-input" name="descripcionChicha" id="descripcionChicha" /* cols="30" */ rows="2"></textarea>
+                    <textarea value={values.descripcionChicha} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input" name="descripcionChicha" id="descripcionChicha" /* cols="30" */ rows="2"></textarea>
                 </div>
                 <div className="itemForm">
                     <label className="item-label" htmlFor="descripcionGrande">Descripcion grande</label>
-                    <textarea value={values.descripcionGrande} onChange={(e) => handleInputChange(e)} className="item-input" name="descripcionGrande" id="descripcionGrande" /* cols="30" */ rows="2"></textarea>
+                    <textarea value={values.descripcionGrande} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input" name="descripcionGrande" id="descripcionGrande" /* cols="30" */ rows="2"></textarea>
                 </div>
-                <div className='number-inputs'>
-                    <div className="itemForm">
-                        <label className="item-label" htmlFor="precio">Precio</label>
-                        <input value={values.precio} onChange={(e) => handleInputChange(e)} className="item-input-number" type="number" min={0} name="precio" id="precio" />
-                    </div>
-                    <div className="itemForm">
-                        <label className="item-label" htmlFor="stock">Stock</label>
-                        <input value={values.stock} onChange={(e) => handleInputChange(e)} className="item-input-number" type="number" min={0} name="stock" id="stock" />
-                    </div>
-                </div>    
-                <div className='dropdowns'>
+                <div className="itemForm">
+                    <label className="item-label" htmlFor="precio">Precio</label>
+                    <input value={values.precio} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input-number" type="number" min={0} name="precio" id="precio" />
+                </div>
+                <div className="itemForm">
+                    <label className="item-label" htmlFor="stock">Stock</label>
+                    <input value={values.stock} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input-number" type="number" min={0} name="stock" id="stock" />
+                 </div>
+                 <div className='dropdowns'>
                     <div className="itemForm-dropdown">
-                        <select className="item-dropdown" onChange={(e) => handleInputChange(e)} name="seccionPrincipal" value={values.seccionPrincipal}>
+                        <select className="item-dropdown" onChange={(e) => handleInputChangeSeccion(e)} name="seccionPrincipal" value={values.seccionPrincipal}>
                             <option value="">SeccionPrincipal</option>
-                            <option value="Alimentos">Alimentos</option>
-                            <option value="HigienePesonal">Higiene personal</option>
-                            <option value="Limpieza">Limpieza</option>
+                            {
+                                secciones.map((seccion, index) => (
+                                    <option key={index} value={`${seccion.seccion}`}>{seccion.seccion}</option>
+                                ))
+                            }
                         </select>
                     </div>
                     <div className="itemForm-dropdown">
-                        <select className="item-dropdown" onChange={(e) => handleInputChange(e)} name="subSeccion" value={values.subSeccion}>
+                        <select disabled={values.seccionPrincipal === ""} className="item-dropdown" onChange={(e) => handleInputChange(e.target.name, e.target.value)} name="subSeccion" value={values.subSeccion}>
                             <option value="">Subsección</option>
-                            <option value="Bebidas">Bebidas</option>
-                            <option value="Lacteos">Lacteos</option>
-                            <option value="Conservas">Conservas</option>
+                            {
+                                values.seccionPrincipal !== "" ?
+                                    secciones.find(sec => sec.seccion === values.seccionPrincipal).subSecciones.map((subseccion, index) => (
+                                        <option key={index} value={`${subseccion.seccion}`}>{subseccion.seccion}</option>
+                                    )) : ""
+                            }
                         </select>
                     </div>
                     <div className="itemForm-dropdown">
-                        <select className="item-dropdown" onChange={(e) => handleInputChange(e)} name="marca" value={values.marca}>
+                        <select className="item-dropdown" onChange={(e) => handleInputChange(e.target.name, e.target.value)} name="marca" value={values.marca}>
                             <option value="">Marca</option>
                             <option value="Natura">Natura</option>
                             <option value="Arcor">Arcor</option>
                             <option value="CocaCola">CocaCola</option>
                         </select>
                     </div>
+                </div>
+                <div>
+                    <label className='item-label' htmlFor="oferta">Producto en oferta</label>
+                    <Switch onClick={() => hacerOferta()} id='oferta' name="oferta" />
+                </div>
+
+                <div>
+                    <label className='item-label' htmlFor="destacado">Producto destacado</label>
+                    <Switch onClick={() => hacerDestacado()} id='destacado' name="destacado" />
                 </div>
                 {
                     mostrarWarning ? 

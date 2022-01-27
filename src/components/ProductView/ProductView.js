@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "./ProductView.css"
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../store/productsContext";
