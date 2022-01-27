@@ -8,12 +8,12 @@ const SecondaryNavbar = ({categorias}) => {
         <div className="secondary-navbar">
             <nav className="secciones-buttons">
                 {
-                    categorias.length > 0 ?
+                    categorias !== undefined && categorias.length > 0 ?
                     <h2 className="secciones-title">Categorias:</h2>
                     : <div></div>
                 }
                 {
-                    categorias.length > 0 ?
+                    categorias !== undefined && categorias.length > 0 ?
                     categorias.map(categoria =>
                         <Link to={`/productos/${categoria.seccion}`} key={categoria.id} className="desktop-tablet-sections">
                             <button className="seccion-button">{categoria.seccion}</button>
@@ -22,7 +22,7 @@ const SecondaryNavbar = ({categorias}) => {
                     : <div></div>
                 }
                 {
-                    categorias.length > 0 ?
+                    categorias !== undefined && categorias.length > 0 ?
                     <select className="mobile-sections" name="Categorias">
                         {
                             categorias.map(categoria =>

@@ -1,12 +1,15 @@
+import { Link, useParams } from 'react-router-dom';
 import './Card.css'
-import { Link } from 'react-router-dom';
 
-const Card = ({nombre, urlImage}) => {
+
+const Card = ({seccion, urlImagen}) => {
+    
     return (
         <>
-            <div className='m-3'>
-                <Link to={'/productos'}> <img className='imgCard shadow' src={urlImage} alt={nombre}/> </Link>
-                <p className='pNombre text-center'>{nombre}</p>
+            {/* ver parametros del router me tira undefined */}
+            <div style={{width: '18rem'}}>
+                <Link to={`/productos/${seccion}`}> <img className='imgCard shadow' src={urlImagen} alt={seccion}/> </Link>
+                <p className='pNombre text-center'>{seccion}</p>
             </div>
         </>
     );

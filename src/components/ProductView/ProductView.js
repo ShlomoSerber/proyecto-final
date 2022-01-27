@@ -22,16 +22,18 @@ const ProductView = () => {
     }
 
     useEffect(() => {
-        setCurrentUser([
-            {
-            username: currentUser[0].username,
-            email: currentUser[0].email,
-            password: currentUser[0].password,
-            arraysCarrito: {carrito, cantProdCarrito},
-            admin: currentUser[0].admin,
-            id: currentUser[0].id
-            }
-        ])   
+        if (currentUser[0] !== undefined) {
+            setCurrentUser([
+                {
+                username: currentUser[0].username,
+                email: currentUser[0].email,
+                password: currentUser[0].password,
+                arraysCarrito: {carrito, cantProdCarrito},
+                admin: currentUser[0].admin,
+                id: currentUser[0].id
+                }
+            ]) 
+        } 
     }, [carrito])
 
     const setVarios = (e) => {
@@ -40,7 +42,7 @@ const ProductView = () => {
     }
 
     const subSecciones =
-    secciones.length > 0 ?
+    secciones !== undefined && secciones.length > 0 ?
     id !== undefined ?
     secciones.filter(seccion => seccion.seccion == objetoProducto[0].seccionPrincipal)
     : []

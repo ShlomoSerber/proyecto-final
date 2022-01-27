@@ -15,16 +15,12 @@ function Products() {
 
     // Los detalles y objetos de una seccion especifica (de nombre igual a seccionParam)
     const seccionDetalles = 
-    secciones.length > 0 ? 
-    seccionParam !== undefined ?
+    secciones !== undefined && secciones.length > 0 && seccionParam !== undefined ?
     secciones.filter(seccion => seccion.seccion == seccionParam)
-    : []
     : [];
     const seccionProductos = 
-    productos.length > 0 ?
-    seccionParam !== undefined ?
+    productos.length > 0 && seccionParam !== undefined ?
     productos.filter(producto => producto.seccionPrincipal == seccionParam) 
-    : []
     : [];
 
     // Los detalles y objetos de una subseccion especifica (de nombre igual a subSeccionParam)
@@ -33,7 +29,7 @@ function Products() {
     productos.filter(producto => producto.subSeccion == subSeccionParam)
     : [];
     const subSecciones = 
-    secciones.length > 0 && subSeccionParam !== undefined ?
+    secciones !== undefined && secciones.length > 0 && subSeccionParam !== undefined ?
     secciones.filter(seccion => seccion.seccion == subSeccionProductos[0].seccionPrincipal)
     : [];
 
