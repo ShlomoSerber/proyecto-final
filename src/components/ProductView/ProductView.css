@@ -79,6 +79,9 @@
     border-color: #A8DADC;
     border-radius: 5px;
 }
+.red-text {
+    color: #E63946;
+}
 
 @media(max-width: 1270px) {
     .product-view-background {

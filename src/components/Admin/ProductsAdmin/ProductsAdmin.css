@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #F1FAEE;
 }
 .add-product-button {
     margin: 5px;
@@ -24,9 +25,35 @@
     border-radius: 5px;
     background-color: #457B9D;
 }
+.table-header-responsive {
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #457B9D;
+    border-style: hidden;
+}
+.responsive {
+    display: none;
+}
+.blue-background {
+    background-color: #457B9D;
+    border-style: hidden
+}
+.responsive-title {
+    text-align: center;
+    color: white;
+}
 
 @media(max-width: 760px) {
     .table-header {
         display: none;
+    }
+    .table-header-responsive {
+        display: block;
+    }
+    .responsive {
+        display: block;
     }
 }

@@ -34,7 +34,7 @@ function Products() {
     : [];
     const subSecciones = 
     secciones.length > 0 && subSeccionParam !== undefined ?
-    secciones.filter((seccion, index) => seccion.seccion == subSeccionProductos[index].seccionPrincipal)
+    secciones.filter(seccion => seccion.seccion == subSeccionProductos[0].seccionPrincipal)
     : [];
 
     return ( 

@@ -20,8 +20,27 @@ export const objetoSecciones = [
         seccionPrincipal: true,
         subSecciones: [
             {
-                id: 1002,
+                id: 1200,
                 seccion: "Mesa",
+            },
+            {
+                id: 1201,
+                seccion: "Silla",
+            },
+            {
+                id: 1202,
+                seccion: "Cama",
+            },
+        ],
+    },
+    {
+        id: 3,
+        seccion: "Test",
+        seccionPrincipal: true,
+        subSecciones: [
+            {
+                id: 1300,
+                seccion: "Subseccion Test",
             },
         ],
     }

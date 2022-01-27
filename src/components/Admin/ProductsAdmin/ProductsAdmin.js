@@ -58,13 +58,21 @@ const ProductsAdmin = () => {
                             <table className="table">
                                 <tbody className='table-header'>
                                     <tr className="text-white">
-                                        <th></th>
+                                        <th>Imagen</th>
                                         <th>Nombre</th>
                                         <th>Precio</th>
                                         <th>Stock</th>
                                         <th>Sección principal</th>
                                         <th>Subsección</th>
-                                        <th></th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </tbody>
+
+                                <tbody className='table-header-responive'>
+                                    <tr className='responsive blue-background'>
+                                        <th className='responsive blue-background'>
+                                            <h2 className='responsive-title responsive'>Productos</h2>
+                                        </th>
                                     </tr>
                                 </tbody>
 

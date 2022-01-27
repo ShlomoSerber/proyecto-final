@@ -19,6 +19,8 @@ const ProductView = () => {
     : []
     : [];
 
+    console.log(precioTotal);
+
     return (
         <>
             <SecondaryNavbar categorias={secciones}/>
@@ -38,7 +40,6 @@ const ProductView = () => {
                                 <h4 className="product-title">{producto.descripcionChica}</h4>
                                 <p className="product-text">{producto.descripcionGrande}</p>
                                 <p className="product-text product-text-margin">{`Marca: ${producto.marca}`}</p>
-                                <p className="product-text">{`Cantidad: ${producto.cantidad}`}</p>
                                 <p className="product-text">{producto.oferta ? "En oferta: Si" : "En oferta: No"}</p>
                                 <h4 className="product-text">{`Precio: $${producto.precio}`}</h4>
                             </div>  
@@ -47,8 +48,8 @@ const ProductView = () => {
                             <h4 className="add-cart-card-title">{`Precio total: $${precioTotal}`}</h4>
                             <div>
                                 <p className="product-text-center">Cantidad:</p>
-                                <input className="cantidad" type="number" placeholder="0" onChange={(e) => e.target.value > 1 && e.target.value <= producto.stock ? setPrecioTotal(precioInicial * e.target.value) : e.target.value = 1}></input>
-                                <p className="product-text-center">{producto.stock > 0 ? `Stock: ${producto.stock}` : "No hay stock"}</p>
+                                <input className="cantidad" type="number" placeholder="0" onChange={(e) => e.target.value > 0 && e.target.value <= producto.stock ? setPrecioTotal(precioInicial * e.target.value) : e.target.value = 1}></input>
+                                <p className={producto.stock > 0 ? "product-text-center" : "product-text-center red-text"}>{producto.stock > 0 ? `Stock: ${producto.stock}` : "No hay stock"}</p>
                             </div>
                             <div className="buttons-container">
                                 <button className="product-button">

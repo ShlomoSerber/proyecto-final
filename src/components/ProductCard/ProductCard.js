@@ -8,7 +8,7 @@ function ProductCard({productos}) {
                 {
                 productos.length > 0 ?
                 productos.map(producto =>
-                    <Link className="producto-card" to={`/productos/producto/${producto.id}`} key={producto.id}>
+                    <Link className={producto.stock === 0 ? "opacity producto-card" : "producto-card"} to={`/productos/producto/${producto.id}`} key={producto.id}>
                         <img src={producto.urlImagen} className="producto-imagen" alt=""/>
                         <div className="producto-text">
                             <h5 className="producto-title">{producto.nombre}</h5>
