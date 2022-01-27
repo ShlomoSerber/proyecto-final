@@ -5,7 +5,7 @@ const ItemProducto = ({nombre, id, marca, urlImagen, seccionPrincipal, subSeccio
     return ( 
         <>
             <tr className="contenedorItemProducto">
-                <td><img src={urlImagen} className="producto-imagen-admin"/></td>
+                <td className='imagen-container'><img src={urlImagen} className="producto-imagen-admin"/></td>
                 <td>{nombre}</td>
                 <td>${precio}</td>
                 <td>{stock}</td>

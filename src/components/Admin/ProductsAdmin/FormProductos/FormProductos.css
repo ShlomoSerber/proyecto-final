@@ -60,12 +60,8 @@
     background-color: #A8DADC;
     border-color: #A8DADC;
 }
-.guardar-button {
-    margin: 10px;
-}
 .alert {
     margin: 5px;
-    margin-top: 15px;
     padding: 5px;
     border-radius: 5px;
 }

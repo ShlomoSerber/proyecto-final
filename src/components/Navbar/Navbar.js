@@ -20,7 +20,10 @@ const Navbar = () => {
                                 <Link className="nav-link active" to='/productos'>Productos</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to='/admin'>Admin</Link>
+                                <Link className="nav-link active" to='/productosAdmin'>Productos Admin</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active" to='/usuariosAdmin'>Usuarios Admin</Link>
                             </li>
                         </ul>
                     </div>

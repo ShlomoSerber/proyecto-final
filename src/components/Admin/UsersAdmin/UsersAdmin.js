@@ -17,24 +17,30 @@ const UsersAdmin = () => {
         setUsuarios(array)
     }
 
-
     return (
-        <div className="d-flex flex-column justify-content-center">
+        <div className="contenedorABMUsuarios">
             {
                 verForm ?
                     <FormUsers setVerForm={setVerForm}/>
-                    : <button className="btn btn-success w-50" onClick={() => setVerForm(true)}>Agregar Producto</button>
+                    : <button className="add-user-button" onClick={() => setVerForm(true)}>Agregar Usuario</button>
             }
-            <h2 className="text-center">Usuarios</h2>
             <div className="contenedorItemsUsuarios">
 
                 <table className="table">
-                    <tbody>
-                        <tr className="bg-dark text-white">
-                            <th>Nombre de usuario</th>
+                    <tbody className='table-header-users'>
+                        <tr className="text-white">
+                            <th className='column-title'>Nombre de usuario</th>
+                            <th className='responsive-title'>Usuario</th>
                             <th>Email</th>
-                            <th></th>
-                            <th></th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tbody>
+
+                    <tbody className='users-table-header-responive'>
+                        <tr className='users-responsive blue-background'>
+                            <th className='responsive blue-background'>
+                                <h2 className='responsive-title responsive'>Usuarios</h2>
+                            </th>
                         </tr>
                     </tbody>
 

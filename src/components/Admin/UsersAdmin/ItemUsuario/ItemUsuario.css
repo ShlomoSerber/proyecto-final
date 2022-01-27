@@ -1,0 +1,52 @@
+.button-outline {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border-color: #E63946;
+    border-width: 2px;
+}
+.button-fill {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #A8DADC;
+    border-color: #A8DADC;
+}
+.small-text {
+    display: none;
+}
+.user-view-responsive {
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-style: solid;
+    border-color: #1D3557;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: white;
+}
+.responsive-text {
+    margin: 5px;
+}
+
+@media(max-width: 760px) {
+    .full-text{
+        display: none;
+    }
+    .small-text {
+        display: block;
+    }
+}
+@media(max-width: 470px) {
+    .user-view{
+        display: none;
+    }
+    .user-view-responsive {
+        display: flex;
+    }
+}

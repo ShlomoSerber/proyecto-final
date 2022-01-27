@@ -1,7 +1,15 @@
-.producto-imagen-admin {
+.imagen-container {
     margin: 5px;
-    max-width: 90px;
-    height: 90px;
+    padding: 15px;
+}
+.producto-imagen-admin {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #1D3557;
+    background-color: white;
+    width: 80px;
+    height: 100px;
     object-fit: contain;
 }
 .editar-button, .eliminar-button, .editar-button-responsive, .eliminar-button-responsive {
@@ -17,10 +25,14 @@
 }
 .eliminar-button, .eliminar-button-responsive {
     border-color: #E63946;
-    background-color: #E63946;
+    background-color: white;
 }
 .productos-responsive {
     display: none;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .table-data-responsive {
     margin: 5px;
@@ -43,9 +55,5 @@
     }
     .productos-responsive {
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        overflow-y: hidden;
     }
 }

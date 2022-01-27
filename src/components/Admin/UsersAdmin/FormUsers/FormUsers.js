@@ -122,68 +122,70 @@ const FormUsers = ({setVerForm}) => {
 
     return (
         <>
-        <form onSubmit={(e) => guardarUsuario(e)} action="" className='d-flex flex-column justif-content-center w-50 align-content-center'>
-            <h3>Datos del usuario</h3>
-            <div>
-                <label htmlFor="Username">Nombre de usuario</label>
-                <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="text" id='Username' name='username' />
+        <form onSubmit={(e) => guardarUsuario(e)} action="" className="contenedorFormUsers">
+            <h2 className="tituloFormUsers">Datos del usuario</h2>
+            <div className="itemForm">
+                <label className="item-label" htmlFor="Username">Nombre de usuario</label>
+                <input className="item-input" onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="text" id='Username' name='username' />
                 {
                     warningUsername ?
-                        <div className="w-75">
-                            <Alert severity="error">Ese nombre de usuario está en uso</Alert>
+                        <div className="w-100">
+                            <Alert severity="error" className="alert">Ese nombre de usuario está en uso</Alert>
                         </div>
                         : ""
                 }
             </div>
-            <div>
-                <label htmlFor="Email">Email</label>
-                <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="email" id='Email' name="email" />
+            <div className="itemForm">
+                <label className="item-label" htmlFor="Email">Email</label>
+                <input className="item-input" onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="email" id='Email' name="email" />
                 {
                     warningEmail ?
-                    <div className="w-75">
-                            <Alert severity="error">Ese email ya tiene una cuenta</Alert>
+                    <div className="w-100">
+                            <Alert severity="error" className="alert">Ese email ya tiene una cuenta</Alert>
                         </div>
                         : ""
                     }
             </div>
-            <div>
-                <label htmlFor="firstPassword">Contraseña</label>
-                <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="password" id='firstPassword' name='password' />
+            <div className="itemForm">
+                <label className="item-label" htmlFor="firstPassword">Contraseña</label>
+                <input className="item-input" onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="password" id='firstPassword' name='password' />
             </div>
-            <div>
-                <label htmlFor="confirmPassword">Confirmar contraseña</label>
-                <input onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="password" id='confirmPassword' name="confirmPassword" />
+            <div className="itemForm">
+                <label className="item-label" htmlFor="confirmPassword">Confirmar contraseña</label>
+                <input className="item-input" onChange={(e) => handleInputChange(e.target.name, e.target.value)} autoComplete='off' type="password" id='confirmPassword' name="confirmPassword" />
                 {
                     warningContraseña ?
-                    <div className="w-75">
-                            <Alert severity="error">Las contraseñas no coinciden</Alert>
+                    <div className="w-100">
+                            <Alert severity="error" className="alert">Las contraseñas no coinciden</Alert>
                         </div>
                         : ""
                 }
             </div>
 
-            <div>
-                <label htmlFor="admin">Dar persmisos de Admin</label>
+            <div className="itemForm">
+                <label className="item-label" htmlFor="admin">Dar persmisos de Admin</label>
                 <Switch onClick={() => hacerAdmin()} id='admin' name="admin" />
             </div>
             
             {
                 warningRequired ?
-                    <div className="w-75">
-                        <Alert severity="error">Debes completar todos los datos!</Alert>
+                    <div className="w-100">
+                        <Alert severity="error" className="alert">Debes completar todos los datos!</Alert>
                     </div>
                     : ""
-                }
+            }
             {
                 mostrarExito ?
-                <div className="w-75">
-                        <Alert severity="success">Agregado con éxito!</Alert>
+                <div className="w-100">
+                        <Alert severity="success" className="alert">Agregado con éxito!</Alert>
                     </div>
                     : ""
-                }
-            <button className='btn btn-success w-50'>Guardar usuario</button>
+            }
+            <div className='tituloFormUsers'>
+                <button className='button'>Guardar usuario</button>
+            </div>
         </form>
-        <button className='btn btn-outline-success w-50' onClick={() => setVerForm(false)}>Cerrar</button>
+        <button className="button" onClick={() => setVerForm(false)}>Cerrar</button>
     </>
     );
 }

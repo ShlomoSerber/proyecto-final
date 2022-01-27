@@ -160,7 +160,7 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
                 </div>
                 {
                     mostrarWarning ? 
-                    <div className="w-75">
+                    <div className="w-100">
                         <Alert severity="error" className="alert">Debes completar todos los datos!</Alert>
                     </div>
                     : ""
@@ -168,14 +168,14 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
                 <div className='tituloFormProductos'>
                     <button type="sumbit" className="guardar-button">Guardar producto</button>
                 </div>
+                {
+                    mostrarExito ? 
+                    <div className="w-100">
+                        <Alert severity="success" className="alert">Agregado con éxito!</Alert>
+                    </div>
+                    : ""
+                }
             </form>
-            {
-                mostrarExito ? 
-                <div className="w-75">
-                    <Alert severity="success">Agregado con éxito!</Alert>
-                </div>
-                : ""
-            }
             <button onClick={() => setVerForm(false) } className="cerrar-button">Cerrar</button>
         </>
     );

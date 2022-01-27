@@ -1,1 +1,1 @@
-export {default} from './UsersAdmin'
+export { default } from './UsersAdmin.js';
