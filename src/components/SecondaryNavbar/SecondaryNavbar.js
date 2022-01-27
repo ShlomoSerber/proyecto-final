@@ -35,10 +35,10 @@ const SecondaryNavbar = ({categorias}) => {
                     : <div></div>
                 }
             </nav>
-            <div className="search-bar">
+            {/*<div className="search-bar">
                 <input type="text" placeholder="Buscar" className="search-input"></input>
                 <button className="search-button">Buscar</button>
-            </div>
+            </div>*/}
         </div>
     );
 }

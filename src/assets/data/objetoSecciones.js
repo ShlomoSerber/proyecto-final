@@ -17,60 +17,30 @@ export const objetoSecciones = [
     },
     {
         id: 2,
-        seccion: "Alimentos",
-        seccionPrincipal: true,
-        subSecciones: [
-            {
-                id: 1201,
-                seccion: "Conservas",
-            },
-            {
-                id: 1202,
-                seccion: "Aderezos"
-            },
-            {
-                id: 1203,
-                seccion: "Mermeladas"
-            },
-            {
-                id: 1204,
-                seccion: "Lacteos"
-            },
-            {
-                id: 1205,
-                seccion: "Bebidas"
-            },
-        ],
-        urlImagen: require("../images/Alimentos.jpg")
-    },
-
-    {
-        id: 3,
         seccion: "Hogar",
         seccionPrincipal: true,
         subSecciones: [
             {
-                id: 1005,
+                id: 1200,
                 seccion: "Estar",
             },
             {
-                id: 1006,
-                seccion: "Habitaciones"
+                id: 1201,
+                seccion: "Dormitorio"
             },
         ],
         urlImagen: require("../images/Hogar.jpg")
     },
-
     {
-        id: 4,
-        seccion: "Muebles",
+        id: 3,
+        seccion: "Alimentos",
         seccionPrincipal: true,
         subSecciones: [
             {
-                id: 1400,
-                seccion: "Mesa"
+                id: 1300,
+                seccion: "Lacteos",
             },
         ],
-        urlImagen: require("../images/Hogar.jpg")
-    }
+        urlImagen: require("../images/Alimentos.jpg")
+    },
 ];

@@ -35,6 +35,7 @@ const Carrito = () => {
                             </div>                         
                         </div>
                     ))}
+                    {/*<button className='button' onClick={}>Finalizar compra</button>*/}
 
                 </>
                 :

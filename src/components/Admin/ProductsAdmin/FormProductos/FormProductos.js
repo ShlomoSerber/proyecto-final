@@ -79,16 +79,11 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
     const estaCompleto = () => {
         for (const key in values) {
             if(values[key] === ""){
-                console.log(key)
                return false
             }
         }
         return true
     }
-
-    useEffect(() => {
-        console.log(values)
-    },[values])
 
     return ( 
         <>

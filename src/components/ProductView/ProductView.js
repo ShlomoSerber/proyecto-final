@@ -4,49 +4,74 @@ import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../store/productsContext";
 import SecondaryNavbar from "../SecondaryNavbar/SecondaryNavbar";
 import ThirdNavbar from "../ThirdNavbar/ThirdNavbar";
+import Alert from '@mui/material/Alert';
 import { UsersContext } from "../../store/usersContext";
 
 const ProductView = () => {
-    const { productos, secciones } = useContext(ProductsContext);
+    const { id } = useParams();
+    const { productos, secciones, setProductos} = useContext(ProductsContext);
     const {usuarios, setUsuarios, currentUser, setCurrentUser} = useContext(UsersContext)
     const { carrito, setCarrito, cantProdCarrito, setCantProdCarrito } = useContext(UsersContext)
-    const { id } = useParams();
+    
     const objetoProducto = productos.length > 0 ? productos.filter(producto => producto.id == id) : [];
+    
     let precioInicial = objetoProducto.length > 0 ? objetoProducto[0].stock > 0 ? objetoProducto[0].precio : 0 : 0;
-    const [precioTotal, setPrecioTotal] = useState(precioInicial);
+    
+    const [precioTotal, setPrecioTotal] = useState(0);
     const [cantidadProd, setCantidad] = useState(0)
+    const [mostrarExito, setMostrarExito] = useState(false)
+    
+    const subSecciones =
+        secciones.length > 0 ?
+            id !== undefined ?
+                secciones.filter(seccion => seccion.seccion == objetoProducto[0].seccionPrincipal)
+                : []
+            : [];
 
     const agregarAlCarrito = () => {
-        setCarrito([...carrito, ...objetoProducto])
-        setCantProdCarrito([...cantProdCarrito, {cantidad: parseInt(cantidadProd), id: parseInt(id)}])
+        let cantP = yaEstaEnElCarrito() 
+        if(cantP !== undefined){
+            let restoDeCants = cantProdCarrito.filter(cant => cant.id != id)
+            restoDeCants.unshift({cantidad: (parseInt(cantP.cantidad) + parseInt(cantidadProd)), id: parseInt(id)})
+            setCantProdCarrito(restoDeCants)
+        }else{
+            setCarrito([...carrito, ...objetoProducto])
+            setCantProdCarrito([...cantProdCarrito, {cantidad: parseInt(cantidadProd), id: parseInt(id)}])
+        }
+        restarStock()
+        setMostrarExito(true)
+        setCantidad(0)
+        setPrecioTotal(0)
+    }
+
+    const yaEstaEnElCarrito = () => {
+        return cantProdCarrito.find(cant => cant.id == id)
+    }
+
+    const restarStock = () => {
+        objetoProducto[0].stock -= cantidadProd
+        let restoDeProductos = productos.filter(producto => producto.id != id)
+        restoDeProductos.unshift(objetoProducto[0])
+        setProductos(restoDeProductos)
     }
 
     useEffect(() => {
-        if (currentUser[0] !== undefined) {
-            setCurrentUser([
-                {
-                username: currentUser[0].username,
-                email: currentUser[0].email,
-                password: currentUser[0].password,
-                arraysCarrito: {carrito, cantProdCarrito},
-                admin: currentUser[0].admin,
-                id: currentUser[0].id
-                }
-            ]) 
-        } 
-    }, [carrito])
+        localStorage.setItem("productos", JSON.stringify(productos))
+    },[productos])
+
+
+    useEffect(() => {
+        if(mostrarExito){
+            setTimeout(() => {
+                setMostrarExito(false)
+            }, 3000);
+        }
+    },[mostrarExito])
 
     const setVarios = (e) => {
         setCantidad(e.target.value)
         setPrecioTotal(precioInicial * e.target.value)
     }
-
-    const subSecciones =
-    secciones !== undefined && secciones.length > 0 ?
-    id !== undefined ?
-    secciones.filter(seccion => seccion.seccion == objetoProducto[0].seccionPrincipal)
-    : []
-    : [];
 
     return (
         <>
@@ -69,21 +94,26 @@ const ProductView = () => {
                                 <p className="product-text product-text-margin">{`Marca: ${producto.marca}`}</p>
                                 <p className="product-text">{producto.oferta ? "En oferta: Si" : "En oferta: No"}</p>
                                 <h4 className="product-text">{`Precio: $${producto.precio}`}</h4>
+                                {
+                                    mostrarExito ? 
+                                    <Alert className="alert" severity="success">Agregado al carrito!</Alert>
+                                    : ""
+                                }
                             </div>  
                         </div>     
                         <div className="add-cart-card">
                             <h4 className="add-cart-card-title">{`Precio total: $${precioTotal}`}</h4>
                             <div>
                                 <p className="product-text-center">Cantidad:</p>
-                                <input className="cantidad" type="number" placeholder="0" onChange={(e) => e.target.value > 0 && e.target.value <= producto.stock ? setPrecioTotal(e.target.value * precioInicial) : e.target.value = 1}></input>
+                                <input value={cantidadProd} className="cantidad" type="number" placeholder="0" onChange={(e) => setVarios(e)}></input>
                                 <p className={producto.stock > 0 ? "product-text-center" : "product-text-center red-text"}>{producto.stock > 0 ? `Stock: ${producto.stock}` : "No hay stock"}</p>
                             </div>
                             <div className="buttons-container">
-                                <button className="product-button" type="submit" onClick={() => agregarAlCarrito()}>
+                                <button disabled={cantidadProd == 0} className="product-button" type="submit" onClick={() => agregarAlCarrito()}>
                                     <i className="bi bi-cart-plus m-1"></i>
                                     Agregar al carrito
                                 </button>
-                                <button className="product-button">Comprar</button>
+                                {/* <button className="product-button">Comprar</button> */}                            
                             </div>
                         </div>
                     </div>
