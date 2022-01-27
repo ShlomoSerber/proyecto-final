@@ -60,12 +60,10 @@ const ProductsAdmin = () => {
                                     <tr className="text-white">
                                         <th></th>
                                         <th>Nombre</th>
-                                        <th></th>
                                         <th>Precio</th>
                                         <th>Stock</th>
                                         <th>Sección principal</th>
                                         <th>Subsección</th>
-                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </tbody>

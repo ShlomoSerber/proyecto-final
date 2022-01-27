@@ -24,3 +24,9 @@
     border-radius: 5px;
     background-color: #457B9D;
 }
+
+@media(max-width: 760px) {
+    .table-header {
+        display: none;
+    }
+}
