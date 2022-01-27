@@ -6,6 +6,10 @@ import Products from './components/Products/';
 import ProductView from './components/ProductView/';
 import ProductsAdmin from './components/Admin/ProductsAdmin/';
 import UsersAdmin from './components/Admin/UsersAdmin/';
+import Login from './components/Login/';
+import Registro from './components/Registro/';
+import Carrito from './components/Carrito/';
+import {ToastContainer} from 'react-toastify';
 
 function App() {
   return (
@@ -19,7 +23,11 @@ function App() {
         <Route path='/productos/producto/:id' element={<ProductView />}/>
         <Route path='/productosAdmin' element={<ProductsAdmin />}/>
         <Route path='/usuariosAdmin' element={<UsersAdmin />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/registro' element={<Registro />}/>
+        <Route path='/carrito' element={<Carrito />}/>
       </Routes>
+      <ToastContainer/>
     </Router>
   );
 }

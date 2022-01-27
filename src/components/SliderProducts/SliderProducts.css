@@ -1,0 +1,15 @@
+
+
+.slider-responsive {
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    .slider-no-responsive {
+        display: none;
+    }
+    .slider-responsive {
+        display: block;
+    }
+}

@@ -108,7 +108,7 @@ const FormProductos = ({initialValues, values, setValues, editando, setEditando,
                 </div>
                 <div className="itemForm">
                     <label className="item-label" htmlFor="descripcionGrande">Descripcion grande</label>
-                    <textarea value={values.descripcionGrande} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input" name="descripcionGrande" id="descripcionGrande" /* cols="30" */ rows="2"></textarea>
+                    <textarea value={values.descripcionGrande} onChange={(e) => handleInputChange(e.target.name, e.target.value)} className="item-input" name="descripcionGrande" id="descripcionGrande" rows="2"></textarea>
                 </div>
                 <div className="itemForm">
                     <label className="item-label" htmlFor="precio">Precio</label>

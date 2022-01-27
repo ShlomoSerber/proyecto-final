@@ -1,13 +1,13 @@
+import { useContext, useEffect, useState } from 'react';
 import './FormUsers.css'
 import { v4 as uuidv4 } from 'uuid';
-import { useContext, useEffect, useState } from 'react';
 import {UsersContext} from '../../../../store/usersContext'
 import Switch from '@mui/material/Switch';
 import Alert from '@mui/material/Alert';
 
 const FormUsers = ({setVerForm}) => {
 
-    const { usuarios, setUsuarios } = useContext(UsersContext)
+    const { usuarios, setUsuarios, currentUser } = useContext(UsersContext)
 
 
     const initialValues = {
@@ -36,11 +36,6 @@ const FormUsers = ({setVerForm}) => {
     const hacerAdmin = () => {
         setDarAdmin(!darAdmin)
     }
-
-   /*  useEffect(() => {
-        console.log(values)
-    }, [values])
- */
 
     useEffect(() => {
         handleInputChange("admin", darAdmin)
@@ -74,11 +69,9 @@ const FormUsers = ({setVerForm}) => {
 
 
     const validacion = () => {
-        console.log("entra a vlaida")
         let retorno = true
         
         if(!estaCompleto()) {
-            console.log("no esta completo")
             retorno = false
             setWarningRequired(true)
         }else{
@@ -87,7 +80,6 @@ const FormUsers = ({setVerForm}) => {
 
         if(values.password !== values.confirmPassword) {
             retorno = false
-            console.log("contraseñas distinattas")
             setWarningContraseña(true)
         }else{
             setWarningContraseña(false)
@@ -95,7 +87,6 @@ const FormUsers = ({setVerForm}) => {
 
         if(usuarios.some(usuario => usuario.username == values.username)) {
             retorno = false
-            console.log("username igual")    
             setWarningUsername(true)
         }else{
             setWarningUsername(false)
@@ -103,7 +94,6 @@ const FormUsers = ({setVerForm}) => {
 
         if(usuarios.some(usuario => usuario.email === values.email)) {
             retorno = false
-            console.log("email igual")
             setWarningEmail(true)
         }else{
             setWarningEmail(false)
@@ -161,12 +151,15 @@ const FormUsers = ({setVerForm}) => {
                         : ""
                 }
             </div>
+            {
+                currentUser.length > 0 && currentUser[0].admin ?
+                    <div>
+                        <label className="item-label" htmlFor="admin">Dar persmisos de Admin</label>
+                        <Switch onClick={() => hacerAdmin()} id='admin' name="admin" />
+                    </div>
+                    : ""
 
-            <div className="itemForm">
-                <label className="item-label" htmlFor="admin">Dar persmisos de Admin</label>
-                <Switch onClick={() => hacerAdmin()} id='admin' name="admin" />
-            </div>
-            
+            }            
             {
                 warningRequired ?
                     <div className="w-100">
@@ -176,7 +169,7 @@ const FormUsers = ({setVerForm}) => {
             }
             {
                 mostrarExito ?
-                <div className="w-100">
+                    <div className="w-100">
                         <Alert severity="success" className="alert">Agregado con éxito!</Alert>
                     </div>
                     : ""
@@ -185,7 +178,11 @@ const FormUsers = ({setVerForm}) => {
                 <button className='button'>Guardar usuario</button>
             </div>
         </form>
-        <button className="button" onClick={() => setVerForm(false)}>Cerrar</button>
+        {
+            currentUser.length > 0 && currentUser[0].admin ?
+                <button className='button' onClick={() => setVerForm(false)}>Cerrar</button>
+                : ""
+        }
     </>
     );
 }
