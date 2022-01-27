@@ -39,42 +39,40 @@ const Login = () => {
         }
     }
 
-    /* useEffect(() => {
-        console.log(values)
-    }, [values]) */
-
     useEffect(() => {
         localStorage.setItem("currentUser", JSON.stringify(currentUser))
     }, [currentUser])
 
     return (
-        <div>
+        <div className='login-background'>
             {
                 currentUser.length === 0 ?
-                    <form onSubmit={(e) => ingresar(e)} action="">
-                        <div>
-                            <label htmlFor="">Nombre de usuario</label>
-                            <input name='username' id='username' onChange={(e) => handleInputChange(e.target.name, e.target.value)} type="text" />
+                    <form className='login-form' onSubmit={(e) => ingresar(e)} action="">
+                        <h2 className='login-form-title'>Login</h2>
+                        <div className='form-item'>
+                            <label className='item-label' htmlFor="">Nombre de usuario</label>
+                            <input className="item-input" name='username' id='username' onChange={(e) => handleInputChange(e.target.name, e.target.value)} type="text" />
                         </div>
-                        <div>
-                            <label htmlFor="">Contraseña</label>
-                            <input name='password' id='password' onChange={(e) => handleInputChange(e.target.name, e.target.value)} type="password" />
+                        <div className='form-item'>
+                            <label className='item-label' htmlFor="">Contraseña</label>
+                            <input className="item-input" name='password' id='password' onChange={(e) => handleInputChange(e.target.name, e.target.value)} type="password" />
                         </div>
                         {
                             warning ?
-                                <div className="w-75">
-                                    <Alert severity="error">Nombre de usuario o contraseña incorrectos!</Alert>
+                                <div className="w-100">
+                                    <Alert className="alert" severity="error">Nombre de usuario o contraseña incorrectos!</Alert>
                                 </div>
                                 : ""
                         }
-                        <button className='btn btn-primary w-25' >Ingresar</button>
-                        <Link className='w-25' to="/registro">No tenes cuenta? Registrate!</Link>
+                        <button className='login-button' >Ingresar</button>
+                        <Link className='item-label m-0-auto' to="/registro">No tenes cuenta? Registrate!</Link>
+                        
                     </form>
                     :
                     <div>
-                        <h4>Hola {currentUser[0].username}</h4>
-                        <p>Ya iniciaste sesión</p>
-                        <Link className='w-25' to="/productos">Ir a comprar</Link>
+                        <h4 className='item-label'>Hola {currentUser[0].username}</h4>
+                        <p className='item-label'>Ya iniciaste sesión</p>
+                        <Link className='item-label m-0-auto' to="/productos">Ir a comprar</Link>
                     </div>
             }
         </div>

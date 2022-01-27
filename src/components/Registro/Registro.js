@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Registro = () => {
     return (
-        <div>
-            <h3>Registrate!</h3>
+        <div className='registro-background'>
+            <h2 className='registro-form-title'>Registrate!</h2>
             <FormUsers />
-            <Link className='w-25' to="/login">Ya tengo cuenta</Link>
+            <Link className='link' to="/login">Ya tengo cuenta</Link>
         </div>
     );
 }
